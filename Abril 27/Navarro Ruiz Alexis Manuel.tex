@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{float} 
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{blindtext,alltt}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+
+
+\title{\includegraphics[scale=0.7]{../../Pictures/UG LOGO-NO NAME.jpg}~\\[1cm]\textsc{\LARGE\bfseries UNIVERSIDAD DE GUANAJUATO}\\ [.3cm] \textsc{\Large \textbf{Herramientas Informáticas y Gestión de la Información}}\\[.8cm] \bfseries\textbf{Trabajo en TEX} }
+\author{\\[.8cm] Alexis Manuel Navarro Ruiz; am.navarroruiz@ugto.mx\\}
+\begin{document}
+\maketitle
+\newpage
+\section{Resumen}
+Este trabajo contiene multiples herramientas vistas en clase y otras más que servirán para trabajos futuros. Para ello se tomarán el caso del movimiento uniformemente acelerado para demostrar algunas funciones.
+
+%El programa con el que estoy realizando este trabajo es Texmaker
+
+\section{Objetivos}
+\begin{itemize}
+\item  Emplear herramientas y comandos vistos en clase.\
+\item Ahondar en las posiblilidades de TEX.\
+	\begin{itemize}
+		\item Imagenes
+		\item Listas 
+			\begin{enumerate}
+				\item Listas
+				\item Listas anidadas
+			\end{enumerate}
+		\item Ecuaciones
+			\begin{itemize}
+				\item Ecuaciones
+				\item Ecuaciones sin numerar
+			\end{itemize}
+		\item Tablas
+		\item Gráficas
+	\end{itemize}
+\item \underline{Destacar la utilidad que ofrecen los editores para realizar trabajos escritos.}\
+\end{itemize}
+\section{Introducción}
+Esta parte me la salto. Solamete para incluir una sección que es importantisima en reportes.\
+
+\section{Marco teórico}
+El movimiento uniformemente acelerado puede ser descrito bajo las siguientes ecuaciones:\\
+\begin{equation}
+x(t)=x_{0}+v_{0}\Delta t+\frac{1}{2} a\Delta t
+\label{eq1}
+\end{equation}
+\begin{equation}
+v(t)=v_{0}+a\Delta t
+\label{eq2}
+\end{equation}
+\begin{equation}
+\notag a=cte
+\end{equation}
+%Otra forma de que no numere la ecuación es asi;
+%\begin{equation*}
+% a=cte
+%\end{equation*}
+La velocidad promedio se puede representar como una línea recta y tiene dos aspectos en la gráfica posición-tiempo. \\
+\begin{equation}
+v_{prom}=\frac{x_{f}-x_{i}}{t_{f}-t_{i}}    
+\label{eq3}
+\end{equation}
+\
+\textit{Podemos ver que para escribir ecuaciones resulta muy práctico.}
+
+\section{Metodología}
+Tomamos un simulador de internet para comprobar .El simulador trata sobre una caja atada a una polea que a la vez jala a un carrito\\
+\subsection{Subsección de prueba}
+	\subsection{Sub-subsección de prueba}
+\section{Resultados y discusión}
+Los resultados del simulador fueron los siguentes:  
+\begin{table}[H]
+\centering
+\begin{tabular}{ |c| c |c | }
+\hline
+ Tiempo (s) & Desplazamiento (cm) \\ 
+ \hline
+0.0 & 0.0  \\
+4.7 & 5  \\  
+6.6 & 10 \\
+8.0 & 15 \\
+9.2 & 20  \\
+10.4 & 25  \\  
+11.4 & 30 \\
+12.2 & 35 \\
+13.0 & 40  \\
+13.8 & 45 \\
+14.4 & 50  \\
+\hline    
+\end{tabular}
+\caption{Movimiento del carrito.}
+\label{tab:1}
+\end{table}
+Estos datos los lleve a Excel y obtuve la ecuación $0.2487x^{2}-0.1634x+0.134$ que representa el movimiento del carrito conforme pasa el tiempo, así pues, se grafica.\\
+\begin{center}
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\centering
+\begin{axis}[
+    xmin=0,xmax=15,
+    ymin=0,ymax=55,
+    minor tick num = 1,
+    xlabel= $t (s)$,
+    ylabel= $x (m)$,
+    legend pos=north west,
+]
+
+\addplot[
+	domain= 0:14.4,
+	samples =20,
+	thin,
+	smooth,
+	blue,
+	mark= *,
+]{(0.2487*x^2)-(0.1634*x)+(0.134)};
+
+\begin{legend}
+{	
+	$0.2487x^{2}-0.1634x+0.134$
+}
+\end{legend}
+\end{axis}
+\end{tikzpicture}
+\caption{Movimiento del carrito respecto al tiempo.}
+\label{fig:1}
+\end{center}
+\end{figure}
+\end{center}
+\section{Conclusiones}
+TEX es sumamente útil además de práctico (cuando se esta familiarizado) pararealizar trabajos; más allá del buen acabado que le da al trabajo (sobre todo cuando se emplean ecuaciones), es capaz de organizar y emplear herramientas que, para opinión muy personal es más cómodo que word, amplian el rango de acción, además de permitir realacionarse que un lenguaje más complejo que bien recuerda la programación \\
+
+\section{Referencias}
+1. Estudio pr ctico del movimiento rectilneo uniformemente acelerado. Didactica fisica uson mx (2021) Disponible en: \url{https://didactica.fisica.uson.mx/cursos/fisord/cinematica/practica/practica1.htm}.
+\end{document}
